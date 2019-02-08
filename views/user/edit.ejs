@@ -1,0 +1,52 @@
+<!--
+including header content which is common for all pages
+-->
+<%- include ../layouts/header.ejs %>	
+		
+<% if (messages.error) { %>
+	<p style="color:red"><%- messages.error %></p>
+<% } %>
+
+<% if (messages.success) { %>
+	<p style="color:green"><%- messages.success %></p>
+<% } %>
+<div class="form">
+<h1><%= title %></h1>
+<form action="/users/edit/<%= id %>" method="post" name="form1">
+	<table width="25%" border="0">
+
+
+		<tr> 
+			<td>Email</td>
+			<td><input type="text" name="email" value="<%= email %>" /></td>
+		</tr>
+
+		<tr> 
+			<td>Password</td>
+			<td><input type="password" name="password" id="password" value="<%= password %>" /></td>
+		</tr>
+		<tr> 
+			<td>Photo</td>
+			<td><input type="file" name="photo" value="" /></br>
+				<img src="" />
+
+					</td>
+		</tr>
+
+
+
+
+		
+		
+		<tr> 
+			<td></td>
+			<td><input type="submit" name="Submit" value="Save" /></td>
+		</tr>
+	</table>
+	<input type="hidden" name="_method" value="PUT" />
+</form>
+</div>
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>

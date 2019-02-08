@@ -1,0 +1,91 @@
+<style>
+		body{
+			margin: 0 ;
+			padding: 0;
+			font-family: arial;
+		}
+.form{
+	background:#ccc;
+	width:330px;
+	margin: 0 auto;
+	padding: 10px;
+	margin-top: 20px;
+	border-radius: 4px;
+}
+.heading {
+	height:40px;
+	background: #222222;
+	line-height: 40px;
+	text-align: center;
+}
+.heading a{
+	text-decoration: none;
+	color: #fff;
+	margin: 0 10px;
+	outline: none;
+	font-size: 17px;
+}
+.heading a:hover{
+	border-bottom: 2px solid #fff;
+}
+h1{
+	font-size: 30px;
+	margin: 0;
+}
+.footer{
+	height:30px;
+	background: #222222;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	font-size: 13px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+</style>
+
+<% if (messages.error) { %>
+	<p style="color:red"><%- messages.error %></p>
+<% } %>
+
+<% if (messages.success) { %>
+	<p style="color:green"><%- messages.success %></p>
+<% } %>
+<div class="heading">
+			<a href="/">Home</a> | 
+			<a href="/users/add">Add New User</a> | 
+			<a href="/users">All Users List</a>
+		</div>	
+<div class="form">
+<h1>Add New User</h1>
+<form action="/users/add" method="post" name="form1" >
+	<table width="25%" border="0">
+		
+		
+		<tr> 
+			<td>Email</td>
+			<td><input type="text" name="email" value="<%= email %>" /></td>
+		</tr>
+
+		<tr> 
+			<td>Password</td>
+			<td><input type="password" name="password" id="password" value="" /></td>
+		</tr>
+		<tr> 
+			<td>Photo</td>
+			<td><input type="file" name="photo" value="" /></td>
+		</tr>
+
+
+		<tr> 
+			<td></td>
+			<td><input type="submit" name="Submit" value="Add" /></td>
+		</tr>
+	</table>
+</form>
+</div>
+
+<div class="footer">
+	© 2019 . All Rights Reserved.
+</div>
